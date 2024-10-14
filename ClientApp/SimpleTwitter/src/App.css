@@ -1,0 +1,56 @@
+html, body, #root {
+    margin: 20px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    flex-direction: column;
+}
+
+/* for list */
+h1 {
+    font-size: 18px;
+    color: #3254ac;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    border: 1px solid #333;
+    padding: 16px;
+    margin-bottom: 8px;
+}
+
+li.button {
+    border-radius: 8px;
+    background-color: #373735;
+}
+
+h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #0070f3;
+}
+
+p {
+    margin: 8px 0 0;
+    font-size: 14px;
+}
+
+/* create post */
+form > div > textarea {
+    width: 100%;
+    height: 100px;
+}

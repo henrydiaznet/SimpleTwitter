@@ -1,0 +1,21 @@
+
+GET {{host}}/posts/
+Accept: application/json
+
+###
+
+POST {{host}}/posts/
+Accept: application/json
+Content-Type: application/json
+
+  {
+    "content": "post post post post",
+    "username": "postman"
+  }
+
+###
+
+GET {{host}}/posts/1
+Accept: application/json
+
+###

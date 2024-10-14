@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleTwitter.Api", "SimpleTwitter.Api\SimpleTwitter.Api.csproj", "{3A30E313-8690-4582-A53E-B02E177B09F1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5B4F0D3B-9E44-486F-B1DB-70E329462B7E}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{D912430D-A75C-4C6D-A859-E9B173921E04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleTwitter.Tests", "SimpleTwitter.Tests\SimpleTwitter.Tests.csproj", "{B457B878-87C1-4733-918C-195CEC314F57}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3A30E313-8690-4582-A53E-B02E177B09F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A30E313-8690-4582-A53E-B02E177B09F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A30E313-8690-4582-A53E-B02E177B09F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A30E313-8690-4582-A53E-B02E177B09F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B457B878-87C1-4733-918C-195CEC314F57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B457B878-87C1-4733-918C-195CEC314F57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B457B878-87C1-4733-918C-195CEC314F57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B457B878-87C1-4733-918C-195CEC314F57}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B457B878-87C1-4733-918C-195CEC314F57} = {D912430D-A75C-4C6D-A859-E9B173921E04}
+	EndGlobalSection
+EndGlobal

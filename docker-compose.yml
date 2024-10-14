@@ -1,0 +1,52 @@
+﻿services:
+  simpletwitter.api:
+    image: simpletwitter.api
+    container_name: simpletwitter.api
+    depends_on:
+      simpletwitter.db:
+        condition: service_healthy
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+      - ASPNETCORE_HTTPS_PORTS=8081
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/simpletwitter.pfx
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=qwerty
+      - ConnectionStrings__DefaultConnection=Server=simpletwitter.db,1433;Database=SimpleTwitterDb;User Id=SA;Password=Qwerty123;TrustServerCertificate=True;
+    build:
+      context: .
+      dockerfile: SimpleTwitter.Api/Dockerfile
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    volumes:
+      - ~/.aspnet/https:/https
+
+  simpletwitter.db:
+    image: "mcr.microsoft.com/mssql/server"
+    container_name: simpletwitter.db
+    ports:
+      - "1433:1433"
+    environment:
+      - ACCEPT_EULA=y
+      - SA_PASSWORD=Qwerty123
+    volumes:
+      - ./.sqlserver/logs:/var/opt/mssql/log
+      - ./.sqlserver/data:/var/opt/mssql/data
+    healthcheck:
+      test: /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P Qwerty123 -C -Q "SELECT 1" || exit 1
+      timeout: 3s
+      start_period: 10s
+      retries: 3
+      interval: 10s
+  
+  simpletwitter.client:
+    image: simpletwitter.client
+    container_name: simpletwitter.client
+    depends_on:
+      - simpletwitter.api
+    build:
+      context: ClientApp/SimpleTwitter/
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+  
